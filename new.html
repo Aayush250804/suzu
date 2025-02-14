@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Secret Message</title>
-    <link rel="stylesheet" href="style.css"> <!-- Linking External CSS -->
-</head>
-<body>
-    <canvas></canvas>
-
-    <div class="content">
-        <div class="overlay">Secret Message</div>
-        <p class="text">Missing You A Lot 🤞💖</p>
-    </div>
-
-    <h3>Swipe on screen to reveal</h3>
-
-    <script>
-        // Canvas Setup for Responsive Background
-        const canvas = document.querySelector("canvas");
-        const ctx = canvas.getContext("2d");
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        window.addEventListener("resize", resizeCanvas);
-        resizeCanvas(); // Initial Call
-
-        // Simple Canvas Effect (Customize This)
-        ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
-        ctx.fillRect(50, 50, 200, 100);
-    </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine's Surprise</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="home" class="home">
+      <div class="home_section">
+        <div id="container">
+          <div class="left"></div>
+          <div class="right"></div>
+          <a href="new.html">
+            <p>
+              Happy Valentine's Day <br />
+              <span>Click Here</span>
+            </p>
+          </a>
+        </div>
+      </div>
+      <h1><span>I&nbsp;</span><span>You</span></h1>
+      <h2>Hover over the text and tap on the heart 💖</h2>
+    </section>
+  </body>
 </html>
