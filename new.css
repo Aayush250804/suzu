@@ -1,113 +1,72 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Background Styling */
 html, body {
-    overflow: hidden;
-    background-color: rgba(255, 0, 0, 0.693);
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(255, 0, 0, 0.693);
 }
 
-/* Full-Screen Canvas */
 canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* Full-Screen Content Wrapper */
 .content {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
 }
 
-/* Overlay Text Styling */
-.overlay {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 80%;
-    max-width: 600px;
-    transform: translate(-50%, -50%);
-    font-family: sans-serif;
-    font-size: 10vh;
-    font-weight: bold;
-    pointer-events: none;
-    text-transform: uppercase;
-    color: white;
-    text-align: center;
-}
-
-/* Responsive Adjustments */
-@media (max-aspect-ratio: 1/1) {
-    .overlay {
-        font-size: 7vh;
-        width: 90%;
-    }
-}
-
-@media (max-aspect-ratio: 3/5) {
-    .overlay {
-        font-size: 5vh;
-    }
-}
-
-/* Mobile-Specific Styles */
-@media (max-width: 600px) {
-    .overlay {
-        font-size: 6vh;
-        width: 90%;
-    }
-    .text {
-        font-size: 150%;
-        width: 80%;
-        margin: 0 auto;
-    }
-    h3 {
-        font-size: 5vh;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-/* Text Styling */
+/* Text container */
 .text {
-    font-size: 200%;
-    width: 60%;
-    height: auto;
-    justify-content: center;
-    color: white;
-    font-family: cursive;
-    font-weight: 900;
-    text-align: center;
-    margin: 0 auto;
+  font-size: 1.5rem;
+  color: white;
+  font-family: cursive;
+  font-weight: 900;
+  max-width: 90%;
+  text-align: center;
 }
 
-/* Footer Message */
+/* Responsive H3 */
 h3 {
-    position: absolute;
-    z-index: 8;
-    left: 50%;
-    bottom: 5%;
-    transform: translateX(-50%);
-    font-size: 4vh;
-    color: white;
+  position: absolute;
+  z-index: 8;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+  width: 90%;
+}
+
+/* Responsive text adjustments */
+@media (max-width: 768px) {
+  .text {
+    font-size: 1.2rem;
+    max-width: 90%;
+  }
+  h3 {
+    font-size: 0.9rem;
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .text {
+    font-size: 1rem;
+  }
+  h3 {
+    font-size: 0.8rem;
+  }
 }
