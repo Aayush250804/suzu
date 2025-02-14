@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   overflow: hidden;
   padding: 0;
   margin: 0;
@@ -21,52 +22,74 @@ canvas {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 20px;
 }
 
-/* Text container */
+.overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  max-width: 400px;
+  transform: translate(-50%, -50%);
+  font-family: sans-serif;
+  font-size: 8vh;
+  font-weight: bold;
+  pointer-events: none;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    font-size: 6vh;
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    font-size: 4vh;
+    width: 90%;
+  }
+}
+
 .text {
   font-size: 1.5rem;
+  width: 80%;
+  max-width: 600px;
   color: white;
   font-family: cursive;
   font-weight: 900;
-  max-width: 90%;
   text-align: center;
+  margin: 0 auto;
 }
 
-/* Responsive H3 */
-h3 {
-  position: absolute;
-  z-index: 8;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1rem;
-  text-align: center;
-  color: white;
-  width: 90%;
-}
-
-/* Responsive text adjustments */
 @media (max-width: 768px) {
   .text {
     font-size: 1.2rem;
-    max-width: 90%;
-  }
-  h3 {
-    font-size: 0.9rem;
-    width: 95%;
+    width: 90%;
   }
 }
 
 @media (max-width: 480px) {
   .text {
     font-size: 1rem;
+    width: 95%;
   }
-  h3 {
-    font-size: 0.8rem;
-  }
+}
+
+h3 {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 8;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  width: 90%;
 }
