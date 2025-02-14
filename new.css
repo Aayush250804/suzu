@@ -22,17 +22,37 @@ canvas {
   height: 100vh;
 }
 
+@media (max-aspect-ratio: 3/5) {
+  p {
+    left: 30%;
+  }
+}
+
 .overlay {
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 30%;
+  max-width: 50%;
   transform: translate(-50%, -50%);
   font-family: sans-serif;
   font-size: 10vh;
   font-weight: bold;
   pointer-events: none;
-  text-transform: uppercase;
-  color: white; /* Ensure text is visible */
+  p-transform: uppercase;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .overlay {
+    left: 50%;
+    width: 90%;
+    max-width: 90%;
+  }
+}
+
+@media (max-aspect-ratio: 3/5) {
+  .overlay {
+    font-size: 5vh;
+  }
 }
 
 .text {
@@ -46,47 +66,9 @@ canvas {
   font-family: cursive;
   font-weight: 900;
 }
-
 h3 {
   position: absolute;
   z-index: 8;
-  left: 50%;
+  left: 40%;
   bottom: 5%;
-  transform: translateX(-50%);
-  color: white; /* Ensure text is visible */
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .overlay {
-    font-size: 8vh; /* Adjust font size for smaller screens */
-    left: 50%;
-    max-width: 90%;
-  }
-
-  .text {
-    font-size: 150%; /* Adjust text size for smaller screens */
-    margin-left: 5%; /* Reduce margin for better fit */
-    width: 90%; /* Make text container wider */
-  }
-
-  h3 {
-    font-size: 5vh; /* Adjust h3 size for smaller screens */
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
-@media (max-width: 480px) {
-  .overlay {
-    font-size: 6vh; /* Further reduce font size for very small screens */
-  }
-
-  .text {
-    font-size: 120%; /* Further adjust text size */
-  }
-
-  h3 {
-    font-size: 4vh; /* Further adjust h3 size */
-  }
 }
