@@ -38,7 +38,7 @@ canvas {
   font-size: 10vh;
   font-weight: bold;
   pointer-events: none;
-  p-transform: uppercase;
+  text-transform: uppercase; /* Fixed typo from p-transform to text-transform */
 }
 
 @media (max-aspect-ratio: 1/1) {
@@ -55,6 +55,28 @@ canvas {
   }
 }
 
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .overlay {
+    font-size: 8vh; /* Adjust font size for smaller screens */
+    left: 50%; /* Center the overlay */
+    transform: translate(-50%, -50%); /* Keep it centered */
+  }
+
+  .text {
+    font-size: 150%; /* Adjust text size for smaller screens */
+    margin-bottom: 5%; /* Reduce margin */
+    width: 80%; /* Increase width for better visibility */
+    margin-left: 10%; /* Center the text */
+  }
+
+  h3 {
+    left: 50%; /* Center h3 */
+    transform: translateX(-50%); /* Center h3 */
+    font-size: 5vh; /* Adjust font size for smaller screens */
+  }
+}
+
 .text {
   font-size: 200%;
   margin-bottom: 10%;
@@ -66,6 +88,7 @@ canvas {
   font-family: cursive;
   font-weight: 900;
 }
+
 h3 {
   position: absolute;
   z-index: 8;
