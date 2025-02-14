@@ -17,13 +17,7 @@
   justify-content: center;
   align-items: center;
   background-attachment: fixed;
-
-  animation-name: bg-change;
-  animation-duration: 15s;
-  animation-timing-function: linear;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-
+  animation: bg-change 15s linear infinite alternate;
   overflow: hidden;
 }
 
@@ -31,7 +25,6 @@
   from {
     background-image: url(https://i.postimg.cc/mDfh5hKD/couple-silhouette-sunset-scenery-digital-art-4k-wallpaper-uhdpaper-com-777-0-i.jpg);
   }
-
   to {
     background-image: url(https://i.postimg.cc/8PLvQNxn/couple-silhouette-sunset-digital-art-4k-wallpaper-uhdpaper-com-222-0-g.jpg);
   }
@@ -47,19 +40,18 @@
   text-align: center;
 }
 
-/**************/
-
+/* Heart Container */
 #container {
-  width: 60vw;
+  width: 50vw;
   aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: Beat 2s ease infinite alternate;
   position: absolute;
   left: 50%;
-  top: 20%;
-  transform: translateX(-50%);
+  top: 40%; /* Adjusted for better positioning */
+  transform: translate(-50%, -50%);
+  animation: Beat 2s ease infinite alternate;
 }
 
 #container a {
@@ -72,17 +64,19 @@
 }
 
 #container span {
-  color: rgb(255, 255, 255);
+  color: white;
   font-weight: 300;
   font-size: 12px;
   padding-top: 100px;
 }
 
+/* Heart Shape */
 .left, .right {
   background-color: red;
-  height: 20vw;
+  height: 18vw;
   aspect-ratio: 1/1.5;
   border-radius: 50% 50% 0% 0%;
+  position: absolute;
 }
 
 .left {
@@ -110,9 +104,10 @@
   }
 }
 
+/* Text Styling */
 h2 {
   position: absolute;
-  color: rgb(255, 255, 255);
+  color: white;
   font-family: cursive;
   font-weight: 900;
   white-space: nowrap;
@@ -125,16 +120,16 @@ h2 {
 @keyframes flicker {
   0% {
     opacity: 0.8;
-    text-shadow: 2px 2px 10px rgb(0, 0, 0);
+    text-shadow: 2px 2px 10px black;
   }
   100% {
     opacity: 1;
-    text-shadow: 2px 2px 20px rgb(255, 0, 0);
+    text-shadow: 2px 2px 20px red;
   }
 }
 
 h1 {
-  color: #ffffff;
+  color: white;
   font-size: 40px;
   font-weight: bold;
   font-family: cursive;
@@ -162,10 +157,11 @@ h1:hover span:nth-child(2) {
 }
 
 h1:hover span {
-  color: #fff;
-  text-shadow: 0 0 10px #da2626, 0 0 20px #e74343, 0 0 40px #fff;
+  color: white;
+  text-shadow: 0 0 10px #da2626, 0 0 20px #e74343, 0 0 40px white;
 }
 
+/* Responsive Adjustments */
 @media only screen and (max-width: 768px) {
   h2, p {
     font-size: 12px;
@@ -174,10 +170,24 @@ h1:hover span {
     font-size: 30px;
   }
   .left, .right {
-    height: 18vw;
+    height: 16vw; /* Adjusted size */
+  }
+  #container {
+    width: 70vw;
+    top: 35%; /* Improved positioning */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 25px;
+  }
+  .left, .right {
+    height: 14vw;
   }
   #container {
     width: 80vw;
-    top: 15%;
+    top: 30%;
   }
 }
+
