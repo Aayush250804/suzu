@@ -1,9 +1,11 @@
+/* Reset Default Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Home Section */
 #home {
   width: 100%;
   height: 100vh;
@@ -14,31 +16,30 @@
   background-color: rgba(255, 255, 255, 0.16);
   background-blend-mode: overlay;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   background-attachment: fixed;
 
-  animation-name: bg-change;
-  animation-duration: 15s;
-  animation-timing-function: linear;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-
+  animation: bg-change 15s linear infinite alternate;
   overflow: hidden;
 }
 
+/* Background Animation */
 @keyframes bg-change {
   from {
     background-image: url(https://i.postimg.cc/mDfh5hKD/couple-silhouette-sunset-scenery-digital-art-4k-wallpaper-uhdpaper-com-777-0-i.jpg);
   }
-
   to {
     background-image: url(https://i.postimg.cc/8PLvQNxn/couple-silhouette-sunset-digital-art-4k-wallpaper-uhdpaper-com-222-0-g.jpg);
   }
 }
 
+/* Home Section Wrapper */
 .home_section {
-  width: 80%;
+  width: 90%;
+  max-width: 600px;
   min-height: 400px;
   display: flex;
   justify-content: center;
@@ -46,8 +47,7 @@
   padding: 10px;
 }
 
-/**************/
-
+/************ HEART ANIMATION ************/
 #container {
   width: 30vw;
   aspect-ratio: 1;
@@ -55,11 +55,12 @@
   align-items: center;
   justify-content: center;
   animation: Beat 2s ease infinite alternate;
-
   position: absolute;
-  left: 35%;
-  top: -7%;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
 }
+
 #container a {
   position: absolute;
   text-decoration: none;
@@ -68,53 +69,98 @@
   font-weight: 700;
   font-family: cursive;
 }
+
 #container span {
   color: rgb(255, 255, 255);
   font-weight: 300;
-  font-size: 10px;
-  padding-top: 100px;
+  font-size: 14px;
 }
+
+/* Left Half of the Heart */
 .left {
   background-color: red;
   height: 12vw;
   aspect-ratio: 1/1.5;
-  border-radius: 50% 50% 0% 0%;
+  border-radius: 50% 50% 0 0;
   rotate: -47deg;
   translate: 30%;
 }
+
+/* Right Half of the Heart */
 .right {
   background-color: red;
   height: 12vw;
   aspect-ratio: 1/1.5;
-  border-radius: 50% 50% 0% 0%;
+  border-radius: 50% 50% 0 0;
   rotate: 47deg;
   translate: -30%;
 }
+
+/* Heart Beat Animation */
 @keyframes Beat {
   0% {
-    transform: scale(120%);
+    transform: scale(1.2);
     filter: drop-shadow(10px 10px 6px #f00606);
   }
   40% {
-    transform: scale(100%);
+    transform: scale(1);
     filter: drop-shadow(10px 10px 60px #f00606);
   }
   100% {
-    transform: scale(120%);
+    transform: scale(1.2);
     filter: drop-shadow(10px 10px 90px #f00606);
   }
 }
 
+/************ TEXT STYLING ************/
+h1 {
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: cursive;
+  letter-spacing: 7px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 35%;
+  text-align: center;
+}
+
+h1 span {
+  transition: 0.2s linear;
+}
+
+/* Valentine's Heart Hover Effect */
+h1:hover span:nth-child(1) {
+  margin-right: 5px;
+}
+
+h1:hover span:nth-child(1)::after {
+  content: "💖";
+}
+
+h1:hover span:nth-child(2) {
+  margin-left: 30px;
+}
+
+h1:hover span {
+  color: #fff;
+  text-shadow: 0 0 10px #da2626, 0 0 20px #e74343, 0 0 40px #fff;
+}
+
+/************ ANIMATED MESSAGE ************/
 h2 {
   position: absolute;
-  color: rgb(255, 255, 255);
+  color: white;
   font-family: cursive;
   font-weight: 900;
-  white-space: nowrap;
   bottom: 8%;
   text-align: center;
+  width: 90%;
+  font-size: 20px;
   animation: flicker 0.5s ease-in-out infinite alternate;
 }
+
+/* Text Flickering Effect */
 @keyframes flicker {
   0% {
     opacity: 0.8;
@@ -126,40 +172,49 @@ h2 {
   }
 }
 
-h1 {
-  color: #ffffff;
-  font-size: 50px;
-  font-weight: bold;
-  font-family: cursive;
-  letter-spacing: 7px;
-  cursor: pointer;
-  position: absolute;
-  bottom: 30%;
-}
-h1 span {
-  transition: 0.2s linear;
-}
-h1:hover span:nth-child(1) {
-  margin-right: 5px;
-}
-h1:hover span:nth-child(1):after {
-  content: "💖";
-}
-h1:hover span:nth-child(2) {
-  margin-left: 30px;
-}
-h1:hover span {
-  color: #fff;
-  text-shadow: 0 0 10px #da2626, 0 0 20px #e74343, 0 0 40px #fff;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  h2,
-  p {
-    font-size: 10px;
+/************ MOBILE RESPONSIVENESS ************/
+@media (max-width: 768px) {
+  /* Adjust Heart Size */
+  .left,
+  .right {
+    height: 18vw;
   }
-  .left {
-    height: 22vw;
+
+  /* Center Text and Buttons */
+  #container {
+    width: 40vw;
+    top: 15%;
   }
+
+  h1 {
+    font-size: 36px;
+    bottom: 40%;
+  }
+
+  h2 {
+    font-size: 18px;
+    bottom: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Smaller Screens (Phones) */
+  h1 {
+    font-size: 30px;
+    bottom: 45%;
+  }
+
+  h2 {
+    font-size: 16px;
+    width: 95%;
+  }
+
+  #container {
+    width: 50vw;
+    top: 20%;
+  }
+
+  .left,
   .right {
     height: 22vw;
   }
